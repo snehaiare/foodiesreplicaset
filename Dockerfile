@@ -13,9 +13,9 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.ta
 RUN tar -xvzf apache-tomcat-9.0.73.tar.gz
 RUN rm apache-tomcat-9.0.73.tar.gz
 
-COPY target/foodies.war ${TOMCAT_HOME}/webbapps
+COPY target/foodies.war ${TOMCAT_HOME}/webapps
 COPY run.sh /tmp
 RUN chmod u+x /tmp/run.sh
 
 ENTRYPOINT [ "/tmp/run.sh" ]
-CMD [ "tail -f /dev/null" ]
+CMD [ "tail -f /dev/null" ] 
